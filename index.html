@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, JS, Quiz">
+    <meta name="description" content="Quiz #3 - MAMC">
+    <meta name="author" content="Miguel Ángel Márquez Cabarcas">
+    <title>Cinefilos Por ti</title>
+    <script src="js/consumirAPI.js"></script>
+</head>
+<body onload="extractAPIData()">
+
+    <h1> Cinefilos Por ti </h1>
+
+    <label for="MovieSelect">Seleccione la pelicula a mostrar:</label>
+    <select id="MovieSelect">
+        <option>...</option>
+    </select>
+    <button id="ShowMovieData" onclick="showMovieData()">Consultar Pelicula Seleccionada</button>
+    <br>
+    <br>
+</body>
+</html>
