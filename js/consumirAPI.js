@@ -84,46 +84,29 @@ function showMovieData() {
     /* Se crea la primera fila de la tabla. */
     var Row1 = document.createElement('tr');
 
+    /* A continuacion se crean los nodos de texto basico utilizando una función: */
     /* Celda del Titulo de la Pelicula */
-    var td = document.createElement('td');
-    var hText = document.createTextNode(movies[select.value].display_title);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+    var td = crearNodoDeTextoCentrado(movies[select.value].display_title);
     Row1.appendChild(td);
 
     /* Celda de la Calificacion MPAA */
-    td = document.createElement('td');
-    hText = document.createTextNode(movies[select.value].mpaa_rating);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+    var td = crearNodoDeTextoCentrado(movies[select.value].mpaa_rating);
     Row1.appendChild(td);
 
     /* Celda de la Eleccion de los Criticos*/
-    td = document.createElement('td');
-    hText = document.createTextNode(movies[select.value].critics_pick);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+    var td = crearNodoDeTextoCentrado(movies[select.value].critics_pick);
     Row1.appendChild(td);
 
-    /* Celda del Titular*/
-    td = document.createElement('td');
-    hText = document.createTextNode(movies[select.value].headline);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+     /* Celda del Titular*/
+    var td = crearNodoDeTextoCentrado(movies[select.value].headline);
     Row1.appendChild(td);
 
     /* Celda del Resumen de la Pelicula*/
-    td = document.createElement('td');
-    hText = document.createTextNode(movies[select.value].summary_short);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+    var td = crearNodoDeTextoCentrado(movies[select.value].summary_short);
     Row1.appendChild(td);
 
     /* Celda de la Fecha de la Pelicula*/
-    td = document.createElement('td');
-    hText = document.createTextNode(movies[select.value].publication_date);
-    td.appendChild(hText);
-    td.style.textAlign = "center";
+    var td = crearNodoDeTextoCentrado(movies[select.value].publication_date);
     Row1.appendChild(td);
 
     /* Celda del Link a la Pelicula*/
@@ -184,4 +167,12 @@ function crearOption(selectID, name) {
   newOption.appendChild(insertedText);
   selectID.appendChild(newOption);
   movieCounter++;
+}
+
+function crearNodoDeTextoCentrado(Text) {
+  var td = document.createElement('td');
+  var hText = document.createTextNode(Text);
+  td.appendChild(hText);
+  td.style.textAlign = "center";
+  return td;
 }
